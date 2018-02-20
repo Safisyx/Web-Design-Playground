@@ -91,7 +91,12 @@
   //  $('#canvas').css('font-family', e.target.value);
   //  })
   ////or
-  $('input[type=radio][name=fontname]').bind('change',handleEvent)
+    $('input[type=radio][name=fontname]').bind('change',handleEvent)
+
+  //change text color
+    $('#textcolor').change(function(e) {
+    $('#canvas').css('color', e.target.value);
+    });
   });
 </script>
 
