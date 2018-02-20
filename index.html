@@ -33,7 +33,7 @@
     }
   </style>
   <script src="https://code.jquery.com/jquery-2.2.3.min.js" integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo=" crossorigin="anonymous"></script>
-  
+
 </head>
 <body>
   <div id="container">
@@ -76,8 +76,24 @@
     </div>
 
   </div>
+
 <script>
-// JavaScript goes here.
+
+  var handleEvent = function(e) {
+    $('#canvas').css('font-family', e.target.value);
+  }
+
+  $(document).ready(function() {
+  // Code here will run when the page has loaded.
+
+  //  $('input[type=radio][name=fontname]').change(function(e) {
+  //  // or ...bind('change', function(e){console....})
+  //  $('#canvas').css('font-family', e.target.value);
+  //  })
+  ////or
+  $('input[type=radio][name=fontname]').bind('change',handleEvent)
+  });
 </script>
+
 </body>
 </html>
