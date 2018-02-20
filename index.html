@@ -58,9 +58,9 @@
       </div>
       <div class="control">
         <h2>Spacing</h2>
-        <p>Text size: <input id="textsize" type="text" name="textsize" value="16" size="5"></p>
-        <p>Line height: <input id="lineheight" type="text" name="lineheight" value="18" size="5"></p>
-        <p>Padding: <input id="textpadding" type="text" name="textpadding" value="10" size="5"></p>
+        <p>Text size: <input id="textsize" type="text" name="textsize" value="16" size="5">px</p>
+        <p>Line height: <input id="lineheight" type="text" name="lineheight" value="18" size="5">px</p>
+        <p>Padding: <input id="textpadding" type="text" name="textpadding" value="10" size="5">px</p>
 
       </div>
     </div>
@@ -101,6 +101,11 @@
   //change background color
     $('#bgcolor').change(function(e) {
     $('#canvas').css('background-color', e.target.value);
+    });
+
+  //change font size
+    $('#textsize').change(function(e) {
+    $('#canvas').css('font-size', e.target.value+'px');
     });
   });
 </script>
