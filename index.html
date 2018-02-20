@@ -58,9 +58,9 @@
       </div>
       <div class="control">
         <h2>Spacing</h2>
-        <p>Text size: <input id="textsize" type="text" name="textsize" value="16" size="5">px</p>
-        <p>Line height: <input id="lineheight" type="text" name="lineheight" value="18" size="5">px</p>
-        <p>Padding: <input id="textpadding" type="text" name="textpadding" value="10" size="5">px</p>
+        <p>Text size: <input id="textsize" type="text" name="textsize" value="16" size="5"> px</p>
+        <p>Line height: <input id="lineheight" type="text" name="lineheight" value="18" size="5"> px</p>
+        <p>Padding: <input id="textpadding" type="text" name="textpadding" value="10" size="5"> px</p>
 
       </div>
     </div>
@@ -78,14 +78,14 @@
   </div>
 
 <script>
-
+  var canvas
   var handleEvent = function(e) {
-    $('#canvas').css('font-family', e.target.value);
+    canvas.css('font-family', e.target.value);
   }
 
   $(document).ready(function() {
   // Code here will run when the page has loaded.
-
+  canvas = $('#canvas'); //mila oe ef mi-exist le iz vao assignEna am variable
   //  $('input[type=radio][name=fontname]').change(function(e) {
   //  // or ...bind('change', function(e){console....})
   //  $('#canvas').css('font-family', e.target.value);
@@ -94,19 +94,33 @@
     $('input[type=radio][name=fontname]').bind('change',handleEvent)
 
   //change text color
-    $('#textcolor').change(function(e) {
-    $('#canvas').css('color', e.target.value);
-    });
+    //$('#textcolor').change(function(e) {
+    //canvas.css('color', e.target.value);
+    //});
 
+    $('#textcolor').bind('input',function(e){
+      canvas.css('color', e.target.value);
+    });
   //change background color
     $('#bgcolor').change(function(e) {
-    $('#canvas').css('background-color', e.target.value);
+    canvas.css('background-color', e.target.value);
     });
 
   //change font size
     $('#textsize').change(function(e) {
-    $('#canvas').css('font-size', e.target.value+'px');
+    canvas.css('font-size', e.target.value+'px');
     });
+
+  //change line height
+    $('#lineheight').change(function(e) {
+    canvas.css('line-height', e.target.value+'px');
+    });
+
+  //change padding
+    $('#textpadding').change(function(e) {
+    canvas.css('padding', e.target.value+'px');
+    });
+
   });
 </script>
 
